@@ -70,8 +70,7 @@ pub fn is_palindrome_with_string(x: i32) -> bool {
 mod test {
     use super::*;
     #[test]
-    fn test_two_sum() {
-        is_palindrome(121);
+    fn test_palindrome() {
         assert!(is_palindrome(121));
         assert!(!is_palindrome(-121));
         assert!(is_palindrome(1001));
