@@ -28,8 +28,7 @@ pub fn longest_common_prefix(strs: Vec<String>) -> String {
     let mut res = String::with_capacity(m);
     for k in 0..m {
         // Safe to unwrap since m is the min length of all strings
-        let first = strs[0].clone();
-        let kth = first.chars().nth(k).unwrap();
+        let kth = strs[0].chars().nth(k).unwrap();
         if strs.iter().any(|s| s.chars().nth(k).unwrap() != kth) {
             break;
         } else {
