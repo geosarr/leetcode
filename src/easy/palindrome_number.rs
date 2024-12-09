@@ -20,14 +20,39 @@
 /// - **Output:** false
 ///
 /// Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
-///  
 ///
 /// **Constraints:**
 ///
-/// -231 <= x <= 231 - 1
+/// -2<sup>31</sup> <= x <= 2<sup>31</sup> - 1
 ///  
 /// Follow up: Could you solve it without converting the integer to a string?
 pub fn is_palindrome(x: i32) -> bool {
+    if x < 0 {
+        return false;
+    }
+    if x < 10 {
+        return true;
+    }
+    let mut y = x;
+    let mut nb_dgts = nb_digits(x);
+    let mut dgts = Vec::with_capacity(nb_dgts);
+    for k in 0..nb_dgts {
+        let low = y % 10;
+        dgts.push(low);
+        y = (y - low) / 10;
+    }
+    for i in 0..nb_dgts / 2 {
+        if dgts[i] != dgts[nb_dgts - 1 - i] {
+            return false;
+        }
+    }
+    true
+}
+
+fn nb_digits(n: i32) -> usize {
+    ((n as f32).log10().floor() + 1.) as usize
+}
+pub fn is_palindrome_with_string(x: i32) -> bool {
     if x < 0 {
         return false;
     }
@@ -46,8 +71,11 @@ mod test {
     use super::*;
     #[test]
     fn test_two_sum() {
+        is_palindrome(121);
         assert!(is_palindrome(121));
         assert!(!is_palindrome(-121));
+        assert!(is_palindrome(1001));
+        assert!(!is_palindrome(2022));
         assert!(!is_palindrome(10));
         assert!(is_palindrome(0));
     }
