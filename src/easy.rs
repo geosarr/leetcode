@@ -1,3 +1,4 @@
+mod index_of_first_occurrence;
 mod longest_common_prefix;
 mod merge_two_sorted_list;
 mod palindrome_number;
@@ -6,6 +7,7 @@ mod remove_element;
 mod roman_to_int;
 mod two_sum;
 mod valid_parentheses;
+pub use index_of_first_occurrence::str_str;
 pub use longest_common_prefix::longest_common_prefix;
 pub use merge_two_sorted_list::merge_two_lists;
 pub use palindrome_number::is_palindrome;
