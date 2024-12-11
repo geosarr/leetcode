@@ -76,7 +76,7 @@ pub fn open(c: char) -> char {
 mod test {
     use super::*;
     #[test]
-    fn test_longest_common_prefix() {
+    fn test_is_valid() {
         assert!(is_valid("()".to_string()));
         assert!(is_valid("()[]{}".to_string()));
         assert!(!is_valid("(]".to_string()));
