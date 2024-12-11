@@ -1,4 +1,5 @@
 mod index_of_first_occurrence;
+mod length_of_last_word;
 mod longest_common_prefix;
 mod merge_two_sorted_list;
 mod palindrome_number;
@@ -9,6 +10,7 @@ mod search_insert;
 mod two_sum;
 mod valid_parentheses;
 pub use index_of_first_occurrence::str_str;
+pub use length_of_last_word::length_of_last_word;
 pub use longest_common_prefix::longest_common_prefix;
 pub use merge_two_sorted_list::merge_two_lists;
 pub use palindrome_number::is_palindrome;
