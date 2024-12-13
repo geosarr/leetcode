@@ -27,7 +27,7 @@ pub fn my_sqrt(x: i32) -> i32 {
     }
     let (mut a, mut b) = (1, x);
     let mut m = a + (b - a) / 2;
-    while (b - a > 1) {
+    while b - a > 1 {
         if x / m < m {
             b = m;
         } else if x / m > m {
