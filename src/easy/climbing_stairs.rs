@@ -36,13 +36,17 @@ pub fn climb_stairs(n: i32) -> i32 {
     (0..kmax).map(|k| f(n, k, &mut map)).sum::<i32>()
 }
 pub fn f(n: i32, k: i32, map: &mut std::collections::HashMap<(i32, i32), i32>) -> i32 {
+    // if map.contains_key(&(n, k)) {
+    //     return map[&(n, k)];
+    // }
     if (k == 0) || (n == 1 && k == 1) || (n == 2 * k) {
+        map.insert((n, k), 1);
         return 1;
     }
     if k == 1 {
+        map.insert((n, k), n - 1);
         return n - 1;
     }
-    // let jmax = std::cmp::min(n, n - 2 * k + 2);
     let val = (1..n - 2 * k + 2)
         .map(|j| {
             let (a, b) = (n - j - 1, k - 1);
