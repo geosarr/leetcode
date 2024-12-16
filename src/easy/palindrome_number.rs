@@ -34,9 +34,9 @@ pub fn is_palindrome(x: i32) -> bool {
         return true;
     }
     let mut y = x;
-    let mut nb_dgts = nb_digits(x);
+    let nb_dgts = nb_digits(x);
     let mut dgts = Vec::with_capacity(nb_dgts);
-    for k in 0..nb_dgts {
+    for _ in 0..nb_dgts {
         let low = y % 10;
         dgts.push(low);
         y = (y - low) / 10;
@@ -52,7 +52,7 @@ pub fn is_palindrome(x: i32) -> bool {
 fn nb_digits(n: i32) -> usize {
     ((n as f32).log10().floor() + 1.) as usize
 }
-pub fn is_palindrome_with_string(x: i32) -> bool {
+pub fn _is_palindrome_with_string(x: i32) -> bool {
     if x < 0 {
         return false;
     }

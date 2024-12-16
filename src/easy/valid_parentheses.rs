@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 /// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 ///
 /// An input string is valid if:
@@ -37,7 +35,7 @@ pub fn is_valid(s: String) -> bool {
     }
     let mut stack = Vec::with_capacity(strings.len());
     stack.push(strings[0]);
-    for (i, s) in strings[1..].iter().enumerate() {
+    for s in strings[1..].iter() {
         // println!("{s}")
         if is_close(*s) {
             let last_open = stack.pop();
