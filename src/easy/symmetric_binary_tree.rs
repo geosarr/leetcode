@@ -1,5 +1,6 @@
 use std::{cell::RefCell, rc::Rc};
 
+/// Test if a tree is symmetric or not.
 pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     if root.is_none() {
         return true;
