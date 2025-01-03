@@ -1,6 +1,7 @@
 mod buy_sell_stock;
 mod climbing_stairs;
 mod count_bits;
+mod fibonacci;
 mod index_of_first_occurrence;
 mod inorder_traversal;
 mod length_of_last_word;
@@ -21,6 +22,7 @@ mod valid_parentheses;
 pub use buy_sell_stock::max_profit;
 pub use climbing_stairs::climb_stairs;
 pub use count_bits::count_bits;
+pub use fibonacci::fib;
 pub use index_of_first_occurrence::str_str;
 pub use inorder_traversal::inorder_traversal;
 pub use length_of_last_word::length_of_last_word;
