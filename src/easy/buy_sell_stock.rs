@@ -25,9 +25,20 @@
 /// - 1 <= prices.length <= 10<sup>5</sup>
 /// - 0 <= prices[i] <= 10<sup>4</sup>
 pub fn max_profit(prices: Vec<i32>) -> i32 {
+    if prices.len() <= 1 {
+        return 0;
+    }
+    let mut max = prices[1] - prices[0];
+    let mut min_price = std::cmp::min(prices[1], prices[0]);
+    for i in 2..prices.len() {
+        max = std::cmp::max(max, prices[i] - min_price);
+        min_price = std::cmp::min(prices[i], min_price);
+    }
+    return max;
+}
+pub fn naive_max_profit(prices: Vec<i32>) -> i32 {
     let mut res = 0;
     for k in 0..prices.len() {
-        // let price = prices[k];
         let sell_price = if let Some(val) = prices[k + 1..].iter().max() {
             *val
         } else {
@@ -38,4 +49,14 @@ pub fn max_profit(prices: Vec<i32>) -> i32 {
         }
     }
     return res;
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_max_profit() {
+        println!("{}", max_profit(vec![6, 8, 1, 5, 9]))
+    }
 }
