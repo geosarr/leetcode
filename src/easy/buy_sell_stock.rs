@@ -34,7 +34,7 @@ pub fn max_profit(prices: Vec<i32>) -> i32 {
         max = std::cmp::max(max, prices[i] - min_price);
         min_price = std::cmp::min(prices[i], min_price);
     }
-    return max;
+    return std::cmp::max(0, max);
 }
 pub fn naive_max_profit(prices: Vec<i32>) -> i32 {
     let mut res = 0;
