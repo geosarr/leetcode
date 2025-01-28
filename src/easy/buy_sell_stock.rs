@@ -36,7 +36,7 @@ pub fn max_profit(prices: Vec<i32>) -> i32 {
     }
     return std::cmp::max(0, max);
 }
-pub fn naive_max_profit(prices: Vec<i32>) -> i32 {
+pub fn _naive_max_profit(prices: Vec<i32>) -> i32 {
     let mut res = 0;
     for k in 0..prices.len() {
         let sell_price = if let Some(val) = prices[k + 1..].iter().max() {
