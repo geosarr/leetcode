@@ -95,6 +95,7 @@ mod tests {
         queue = queue.pop().0;
         println!("{}", queue);
         queue = queue.pop().0;
+        queue.push(1);
         println!("{}", queue);
     }
 }

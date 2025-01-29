@@ -14,7 +14,12 @@ pub mod easy;
 
 pub trait Number
 where
-    Self: std::ops::Add<Self, Output = Self> + PartialOrd + Sized + Copy,
+    Self: std::ops::Add<Self, Output = Self>
+        + std::ops::Sub<Self, Output = Self>
+        + PartialOrd
+        + Sized
+        + Copy
+        + Clone,
 {
     fn max() -> Self;
     fn zero() -> Self;
